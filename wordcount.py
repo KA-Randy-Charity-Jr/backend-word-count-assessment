@@ -61,8 +61,11 @@ def print_top(filename):
     """Prints the top count listing for the given file."""
     only20={}
     newDict= create_word_dict(filename)
-    newnewDict = sorted(newDict.values(),reverse=True)
-    t = print(newnewDict)
+    newnewDict = {k: v for k, v in sorted(newDict.items(), key=lambda item: item[1],reverse=True)}
+    for item in newnewDict:
+        if len(only20)<20:
+            only20[item]=newnewDict[item]
+    t = print(only20)
     return t
 
 
