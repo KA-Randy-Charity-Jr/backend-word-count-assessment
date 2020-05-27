@@ -51,20 +51,22 @@ def create_word_dict(filename):
 
 
 def print_words(filename):
-  
-   g = print(create_word_dict(filename))
-
-   return g
+   finalform=[] 
+   g = create_word_dict(filename)
+   for item in g:
+       finalform.append(item+":"+str(g[item]))
+   print(finalform) 
+   return finalform
 
 
 def print_top(filename):
     """Prints the top count listing for the given file."""
-    only20={}
+    only20=[]
     newDict= create_word_dict(filename)
     newnewDict = {k: v for k, v in sorted(newDict.items(), key=lambda item: item[1],reverse=True)}
     for item in newnewDict:
         if len(only20)<20:
-            only20[item]=newnewDict[item]
+            only20.append(item + ":"+str(newnewDict[item]))
     t = print(only20)
     return t
 
