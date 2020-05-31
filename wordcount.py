@@ -54,8 +54,8 @@ def print_words(filename):
    finalform=[] 
    g = create_word_dict(filename)
    for item in g:
-       finalform.append(item+":"+str(g[item]))
-   print(finalform) 
+       print(item+":"+str(g[item]))
+    
    return finalform
 
 
