@@ -45,16 +45,16 @@ def create_word_dict(filename):
             else:
                 theDict[item.lower()]=1   
     
-    
+    thenewdict =  {k: v for k, v in sorted(theDict.items(), key=lambda item: item)}
     f.close()
-    return theDict
+    return thenewdict
 
 
 def print_words(filename):
-   finalform=[] 
+   finalform=[]
    g = create_word_dict(filename)
    for item in g:
-       print(item+":"+str(g[item]))
+     print(item+":"+str(g[item]))
     
    return finalform
 
